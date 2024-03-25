@@ -10,6 +10,7 @@ const UpperShowCase = () => {
     // HANDLE SINGLE PRODUCT
     const handleSingleProduct = () => {
         navigate('/singleproduct/8237928');
+        window.scroll(0, 0)
     }
 
     return (

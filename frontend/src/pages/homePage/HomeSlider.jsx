@@ -33,7 +33,6 @@ const HomeSlider = () => {
         pauseOnHover: true,
     };
 
-    // Update the number of slides based on screen size
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 1200) {
@@ -60,8 +59,8 @@ const HomeSlider = () => {
 
     return (
         <>
-            <section className='py-10'>
-                <div className="container mx-auto px-3 sm:px-0">
+            <section className='py-10 px-3'>
+                <div className="container mx-auto px-2 sm:px-0">
 
                     <div className=" flex justify-end items-center gap-4">
                         <button onClick={previous} className="inline-block rounded-full border border-gray-800 hover:border-[#FFC522] p-3 text-gray-800 hover:bg-[#FFC522] hover:text-white focus:outline-none">
@@ -74,10 +73,10 @@ const HomeSlider = () => {
                     </div>
 
 
-                    <div className="mx-auto">
+                    <div className="">
                         <Slider ref={sliderRef} {...settings}>
                             {product.map((item, index) => (
-                                <div className="my-5 mx-3 sm:mx-2 max-w-[17rem] sm:max-w-[18.8rem] text-gray-900 hover:text-yellow-300 cursor-pointer overflow-hidden rounded-lg shadow-lg transition hover:shadow-xl focus:outline-none">
+                                <div className="my-5 mx-0 sm:mx-2 max-w-full sm:max-w-[18.8rem] text-gray-900 hover:text-yellow-300 cursor-pointer overflow-hidden rounded-lg shadow-lg transition hover:shadow-xl focus:outline-none">
                                     <img
                                         alt=""
                                         src={item.img}

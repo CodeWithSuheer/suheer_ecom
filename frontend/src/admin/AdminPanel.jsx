@@ -125,7 +125,7 @@ const AdminBody = () => {
                                 <span className="sr-only">Toggle sidebar</span>
                             </button>
 
-                            <Link to="/admin" className="flex items-center justify-between mr-4">
+                            <Link to="/admin" className="hidden sm:flex items-center justify-between mr-4">
                                 <FaOpencart size={30} className="mr-2.5 text-gray-800 dark:text-gray-200" />
                                 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                                     Dashboard

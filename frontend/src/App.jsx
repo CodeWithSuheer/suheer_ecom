@@ -16,6 +16,7 @@ import UpdateProduct from "./admin/UpdateProduct";
 import SingleProduct from "./pages/singleProduct/SingleProduct";
 import './App.css'
 import Footer from "./components/footer/Footer";
+import Contact from "./pages/contact/Contact";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/singleProduct/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/contact" element={<Contact />} />
 
           {/* AUTH ROUTE */}
           <Route path="/login" element={<Login />} />

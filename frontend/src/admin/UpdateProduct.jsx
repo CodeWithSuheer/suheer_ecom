@@ -9,7 +9,11 @@ const UpdateProduct = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const fileInputRef = useRef(null);
+
+    // Getting all products
     const { products, isLoading, updateLoading, deleteLoading } = useSelector((state) => state.product);
+
+    // Filter selected Product
     const selectedProduct = products.find((product) => product._id === id);
 
     const categories = [
@@ -61,11 +65,6 @@ const UpdateProduct = () => {
         setFileToBase(file);
     };
 
-    const resetImage = () => {
-        setFormdata({ ...formdata, image: '' });
-        fileInputRef.current.value = '';
-    };
-
     const setFileToBase = (file) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -73,6 +72,12 @@ const UpdateProduct = () => {
             setFormdata({ ...formdata, image: reader.result });
         };
     };
+
+    const resetImage = () => {
+        setFormdata({ ...formdata, image: '' });
+        fileInputRef.current.value = '';
+    };
+
 
     // HANDLE CHECK CHANGE
     const handleCheckChange = (event) => {
