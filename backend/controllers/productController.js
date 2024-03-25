@@ -90,19 +90,18 @@ export const updateProduct = asyncHandler(async (req, res) => {
     if (image) {
         const productData = await Product.findById(id);
 
-        if (productData && productData.image) {
+        if (productData ) {
             await deleteImageToCloudinary(productData.image.public_id);
         } else {
             throw new Error("Image nae ha bhai");
-        }
+        };
 
-        const { public_id, secure_url } = image;
-
+        const result = await uploadImageToCloudinary(image, "/products")
         // Check if 'secure_url' is a valid URL
         if (typeof secure_url === 'string' && secure_url.startsWith('http')) {
             const imageData = {
-                public_id,
-                secure_url,
+                public_id:result.public_id,
+                secure_url:result.secure_url,
             };
             productQuery = { ...productQuery, image: imageData };
         } else {
